@@ -1,0 +1,70 @@
+
+#include <iostream>
+#include<fstream > //for reading file
+#include<ctime>//for srand function
+#include<string>
+
+using namespace std;
+
+void check_random_number(int l, int k[], int i) {
+	for (int p = 0; p < i; p++) {
+		if (l == k[p]) {
+			l = rand() % 10;
+		}
+	}
+}
+void filling_random_characters(char arr1[10][10]) {
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (arr1[i][j] < 'A')//&& arr1[i][j] > 'z')// && arr1[i][j] < 'a' && arr1[i][j] > 'z')
+			{
+				int c = rand() % 26;
+				arr1[i][j] = c + 'A';
+			}
+		}
+	}
+}
+void print(char arr1[10][10]) {
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+
+			cout << arr1[i][j] << " ";
+		}cout << endl;
+
+	}
+
+}
+int main()
+{
+	ifstream fin("input.txt");
+
+
+
+	char arr1[10][10];
+
+	int k[10];
+	srand(time(NULL));// to get a new sequence everytime 
+	int arr[10] = { 4,4,6,6,8,8,8,9,10,10 };
+	int l = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		l = rand() % 10;
+		k[i] = l;
+		check_random_number(l, k, i);
+		for (int j = 0; j < arr[i]; j++) {
+			fin >> arr1[l][j]; //reading  file
+			
+			
+		
+		}
+
+	}
+	
+
+
+	filling_random_characters(arr1);
+	print(arr1);
+	fin.close();
+	system("pause");
+}
