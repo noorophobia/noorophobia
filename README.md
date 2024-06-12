@@ -1,6 +1,6 @@
 - 👋 Hi, I’m Noor Fatima.
 - 🌱 I’m currently learning Coding.
-- .Bachelors in Software Engineering 
+- Bachelors in Software Engineering 
 - Fast (NUCES) 
 
 
